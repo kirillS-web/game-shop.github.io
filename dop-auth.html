@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход / Регистрация</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles-ac.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000000, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #74ebd5;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(116, 235, 213, 0.3);
+    }
+
+    button[type="submit"] {
+      background-color: #000000;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #8a2be2;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-button {
+      margin-top: 20px;
+      background-color: transparent;
+      color: #555;
+      border: 2px solid #ccc;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      border-color: #8a2be2;
+      color: #000000;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .error-message {
+      margin-top: 10px;
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h2>Вход или Регистрация</h2>
+    <form id="authForm">
+      <input type="text" id="username" placeholder="Имя пользователя" required>
+      <input type="password" id="password" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+    </form>
+    <div class="error-message" id="errorMsg"></div>
+    <button class="back-button" onclick="history.back()">← Назад</button>
+  </main>
+  <script>
+    const authForm = document.getElementById('authForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    authForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = authForm.username.value.trim();
+      const password = authForm.password.value;
+
+      const storedData = localStorage.getItem(`user_${username}`);
+
+      if (storedData) {
+        const userData = JSON.parse(storedData);
+        if (userData.password === password) {
+          localStorage.setItem('currentUser', username);
+          window.location.href = 'index.html';
+        } else {
+          errorMsg.textContent = 'Неправильный логин или пароль';
+        }
+      } else {
+        // Регистрация нового пользователя
+        const newUser = { password: password };
+        localStorage.setItem(`user_${username}`, JSON.stringify(newUser));
+        localStorage.setItem('currentUser', username);
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>

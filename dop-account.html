@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Личный кабинет — Game Shop</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles-ac.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #000000, #ffffff);
+      color: #fff;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #2a2a3d;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      text-align: justify;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: #8a2be2;
+    }
+
+    #welcome {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #8a2be2;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #8a2be2;
+    }
+
+    .back-button {
+      margin-bottom: 30px;
+      background-color: #34495e;
+    }
+
+    .back-button:hover {
+      background-color: #2c3e50;
+    }
+
+    .balance, .history {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #3b3b54;
+      border-radius: 10px;
+      text-align: justify;
+    }
+
+    .balance h3, .history h3 {
+      color: #8a2be2;
+      margin-bottom: 10px;
+    }
+
+    .history ul {
+      list-style: square;
+      padding-left: 20px;
+      list-style-position: inside;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <button class="back-button" onclick="history.back()">← Назад</button>
+
+    <h2>Личный кабинет</h2>
+    <div id="welcome"></div>
+
+    <form id="dataForm">
+      <input type="text" id="name" placeholder="Имя">
+      <input type="text" id="phone" placeholder="Номер телефона">
+      <input type="text" id="card" placeholder="Банковская карта">
+      <button type="submit">Сохранить</button>
+    </form>
+
+    
+
+    <div class="balance">
+      <h3>Ваш баланс:</h3>
+      <p><strong>0 рублей</strong></p>
+    </div>
+
+    <div class="history">
+      <h3>История покупок:</h3>
+      <ul>
+        <li>Вы еще ничего не покупали</li>
+      </ul>
+    </div>
+    <button onclick="logout()">Выйти из аккаунта</button>
+  </main>
+
+  <script>
+    const currentUser = localStorage.getItem('currentUser');
+    const welcome = document.getElementById('welcome');
+    const dataForm = document.getElementById('dataForm');
+
+    if (!currentUser) {
+      window.location.href = 'dop-auth.html';
+    } else {
+      welcome.textContent = `Добро пожаловать, ${currentUser}`;
+      const savedData = JSON.parse(localStorage.getItem(`user_${currentUser}`));
+      if (savedData) {
+        if (savedData.phone) document.getElementById('phone').value = savedData.phone;
+        if (savedData.card) document.getElementById('card').value = savedData.card;
+        if (savedData.name) document.getElementById('name').value = savedData.name;
+      }
+    }
+
+    dataForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const phone = document.getElementById('phone').value;
+      const card = document.getElementById('card').value;
+      const name = document.getElementById('name').value;
+      const userData = JSON.parse(localStorage.getItem(`user_${currentUser}`)) || {};
+      userData.phone = phone;
+      userData.card = card;
+      userData.name = name;
+      localStorage.setItem(`user_${currentUser}`, JSON.stringify(userData));
+      alert('Данные сохранены');
+    });
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

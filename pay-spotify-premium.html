@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Оплата</title>
+  <style>
+/* Сбрасываем отступы и поля для всех элементов */
+* {
+  margin: 0; /* Убираем внешние отступы для всех элементов */
+  padding: 0; /* Убираем внутренние отступы для всех элементов */
+  box-sizing: border-box; /* Все элементы будут учитывать свои границы и отступы в общей ширине и высоте */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Устанавливаем шрифт для текста на странице */
+  display: flex; /* Используем флекс-контейнер для выравнивания элементов */
+  justify-content: center; /* Центрируем контент по горизонтали */
+  align-items: center; /* Центрируем контент по вертикали */
+  height: 100vh; /* Высота body — 100% от высоты экрана */
+  background-color: #000000; /* Устанавливаем черный фон для страницы */
+}
+
+.container {
+  text-align: center; /* Центрируем текст внутри контейнера */
+  width: 300px; /* Ширина контейнера фиксирована — 300px */
+}
+
+.header-img {
+  width: 100%; /* Изображение будет занимать всю ширину контейнера */
+  height: 200px; /* Высота изображения фиксированная — 200px */
+  object-fit: cover; /* Масштабируем изображение, сохраняя его пропорции и обрезая лишнее, чтобы оно полностью заполнило контейнер */
+}
+
+.text-section {
+  margin-top: 20px; /* Отступ сверху для секции с текстом */
+}
+
+.greeting {
+  font-size: 48px; /* Размер шрифта для приветственного текста */
+  font-weight: bold; /* Сделать текст жирным */
+  color: #ffffff; /* Белый цвет текста */
+  text-transform: uppercase; /* Преобразовать текст в верхний регистр */
+}
+
+.price {
+  font-size: 18px; /* Размер шрифта для цены */
+  color: #ffffff; /* Белый цвет текста */
+  margin-top: 10px; /* Отступ сверху */
+  text-transform: uppercase; /* Преобразовать текст в верхний регистр */
+}
+
+.input-section {
+  margin-top: 30px; /* Отступ сверху для секции с полями ввода */
+}
+
+.input-field {
+  width: 100%; /* Поле ввода занимает всю ширину контейнера */
+  padding: 10px; /* Внутренние отступы (отступы внутри поля) */
+  margin: 10px 0; /* Внешние отступы сверху и снизу */
+  border: 1px solid #ffffff; /* Белая граница поля ввода */
+  border-radius: 5px; /* Скругляем углы поля ввода */
+}
+
+.counter-section {
+  margin-top: 20px; /* Отступ сверху для секции с кнопками-счетчиками */
+  display: flex; /* Используем флекс-контейнер для выравнивания элементов */
+  justify-content: center; /* Выравнивание по центру по горизонтали */
+  align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.counter-btn {
+  padding: 10px; /* Внутренние отступы для кнопок */
+  font-size: 18px; /* Размер шрифта на кнопке */
+  background-color: rgb(138, 43, 226); /* Фон кнопки фиолетовый */
+  color: white; /* Белый цвет текста на кнопке */
+  border: none; /* Убираем рамку вокруг кнопки */
+  border-radius: 5px; /* Скругляем углы кнопки */
+  cursor: pointer; /* Курсор в виде руки при наведении на кнопку */
+}
+
+.counter-btn:hover {
+  background-color: rgba(137, 43, 226, 0.555); /* При наведении на кнопку меняем цвет фона с небольшой прозрачностью */
+}
+
+.counter-value {
+  font-size: 24px; /* Размер шрифта для отображения текущего значения счетчика */
+  margin: 0 10px; /* Отступы слева и справа для значения счетчика */
+  color: white; /* Белый цвет текста */
+}
+
+.payment-section {
+  margin-top: 30px; /* Отступ сверху для секции с кнопкой оплаты */
+}
+
+.total-price-section {
+  margin-top: 20px; /* Отступ сверху для секции с итоговой ценой */
+}
+
+#total-price {
+  font-size: 20px; /* Размер шрифта для итоговой цены */
+  font-weight: bold; /* Жирное начертание для текста итоговой цены */
+  color: white; /* Белый цвет текста */
+}
+
+.pay-btn {
+  padding: 10px 20px; /* Внутренние отступы для кнопки оплаты */
+  font-size: 18px; /* Размер шрифта на кнопке */
+  background-color: rgb(138, 43, 226); /* Фиолетовый фон кнопки */
+  color: white; /* Белый цвет текста на кнопке */
+  border: none; /* Убираем рамку вокруг кнопки */
+  border-radius: 5px; /* Скругляем углы кнопки */
+  cursor: pointer; /* Курсор в виде руки при наведении на кнопку */
+}
+
+.pay-btn:hover {
+  background-color: rgba(137, 43, 226, 0.555); /* При наведении на кнопку меняем цвет фона с небольшой прозрачностью */
+}
+
+.modal {
+  display: none; /* Модальное окно скрыто по умолчанию */
+  background-color: rgb(138, 43, 226); /* Фон модального окна фиолетовый */
+  color: white; /* Белый цвет текста в модальном окне */
+  padding: 20px; /* Внутренние отступы в модальном окне */
+  border-radius: 5px; /* Скругляем углы модального окна */
+  position: fixed; /* Фиксированное положение окна на экране */
+  top: 10%; /* Отступ от верхней границы экрана */
+  left: 50%; /* Центрируем модальное окно по горизонтали */
+  transform: translate(-50%, -50%); /* Центрируем модальное окно по вертикали */
+  text-align: center; /* Центрируем текст внутри модального окна */
+}
+
+.close-btn {
+  background-color: red; /* Красный фон для кнопки закрытия */
+  color: white; /* Белый цвет текста на кнопке */
+  padding: 10px; /* Внутренние отступы для кнопки */
+  border: none; /* Убираем рамку вокруг кнопки */
+  border-radius: 5px; /* Скругляем углы кнопки */
+  cursor: pointer; /* Курсор в виде руки при наведении на кнопку */
+}
+
+.close-btn:hover {
+  background-color: darkred; /* При наведении на кнопку закрытия меняем цвет фона на темно-красный */
+}
+
+#input {
+    position: absolute; 
+    top: 30px; 
+    left: 70px;
+    transform: translateX(-50%); /* Центрируем кнопку по горизонтали */
+    padding: 15px 30px; /* Добавляем внутренние отступы для кнопки */
+    font-size: 18px; /* Устанавливаем размер шрифта для текста на кнопке */
+    background-color: #4CAF50; /* Устанавливаем зеленый цвет фона кнопки */
+    color: white; /* Устанавливаем белый цвет текста */
+    border: none; /* Убираем границу у кнопки */
+    cursor: pointer; /* Меняем курсор на указатель, когда наводим на кнопку */
+    border-radius: 5px; /* Закругляем углы кнопки */
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="img/12.png" alt="Картинка" class="header-img">
+    <input id="input" type="button" onclick="history.back();" value="Назад"/>
+    <div class="text-section">
+      <p class="greeting">Spotify Premium</p>
+      <p class="price">От 200 рублей</p>
+    </div>
+
+    <div class="input-section">
+      <input type="email" id="email" placeholder="telegram" class="input-field">
+      <input type="text" id="promo" placeholder="промокод" class="input-field">
+    </div>
+
+    <div class="input-section">
+      <select id="dropdown" class="input-field">
+        <option value="none">Выберите вариант</option>
+        <option value="200"> 1 месяц</option>
+        <option value="500"> 3 месяца</option>
+        <option value="1000"> 6 месяцев</option>
+        <option value="1600"> 1 год</option>
+        <option value="300"> 1 месяц (на двоих)</option>
+        <option value="500"> 1 месяц (на 6 аккаунтов)</option>
+      </select>
+      <button id="apply-btn" class="pay-btn">Применить</button>
+    </div>
+
+    <div class="payment-section">
+      <button id="pay-btn" class="pay-btn">Оплатить</button>
+    </div>
+
+    <div id="modal" class="modal">
+      <p>Перевести на карту [2200 1535 1559 4027] и действовать по <a href="dop-instruction.html">инструкции</a></p>
+      <button id="close-btn" class="close-btn">Закрыть</button>
+    </div>
+  </div>
+
+  <script>
+    const counter = document.getElementById('counter');
+    const promoInput = document.getElementById('promo');
+    const totalPriceElement = document.getElementById('total-price');
+    const payBtn = document.getElementById('pay-btn');
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('close-btn');
+    const applyBtn = document.getElementById('apply-btn');
+    const dropdown = document.getElementById('dropdown');
+
+
+    let count = 0;
+    let discount = 0;
+    let selectedOption = 0;
+
+    applyBtn.addEventListener('click', () => {
+      selectedOption = parseInt(dropdown.value) || 0;
+      payBtn.textContent = `Оплатить ${selectedOption} рублей`;
+      updateTotalPrice();
+    });
+
+    payBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

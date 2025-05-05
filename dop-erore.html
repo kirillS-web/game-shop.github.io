@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>ERORE</title>
+    <style>
+        h2 {
+            position: absolute;
+            top: 250px;
+            left: 500px;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        input {
+    transform: translateX(-50%); /* Центрируем кнопку по горизонтали */
+    padding: 15px 30px; /* Добавляем внутренние отступы для кнопки */
+    font-size: 18px; /* Устанавливаем размер шрифта для текста на кнопке */
+    background-color: #ff0000; /* Устанавливаем зеленый цвет фона кнопки */
+    color: white; /* Устанавливаем белый цвет текста */
+    border: none; /* Убираем границу у кнопки */
+    cursor: pointer; /* Меняем курсор на указатель, когда наводим на кнопку */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    position: absolute;
+    top: 400px;
+    left: 800px;
+        }
+    </style>
+</head>
+<html>
+    <body>
+        <h2>Упс.... пошло что-то не так <br> попробуйте попытку позже</h2>
+        <input type="button" onclick="history.back();" value="Назад"/>
+    </body>
+</html>

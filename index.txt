@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Shop</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style-foter.css">
+
+    <style>
+        /* Добавляем стили для тем */
+        body.light-theme {
+            background-color: #f0f0f0;
+            color: #222;
+        }
+
+        body.dark-theme {
+            background-color: #121212;
+            color: #eee;
+        }
+
+        /* Кнопка переключения темы */
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 20px;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body class="dark-theme">
+<div class="body">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Game Shop</a>
+        </div>
+
+        <!-- Кнопка темы -->
+        <div class="theme-toggle" id="themeToggle" title="Переключить тему">☀️</div>
+
+        <!-- Account section -->
+        <nav id="navLinks">
+            <a href="dop-account.html" id="accountLink" style="display: none;">👤 Личный кабинет</a>
+            <a href="dop-auth.html" id="authLink">🔐 Вход / Регистрация</a>
+        </nav>
+    </header>
+
+    <!-- (твой остальной код без изменений) -->
+
+    <div class="header-img">
+        <img src="img/fon-2.png" alt="Фон">
+    </div>
+    
+    <!-- Main Section и далее... -->
+
+    <section class="products">
+        <h2 style="background-color: black;">Что можно купить?</h2>
+        <div class="product-list">
+            <!-- Продукты (картинки) с кнопками -->
+            <div class="product-card">
+                <img src="img/8.jpg" alt="Продукт 1">
+                <p>Clash of Clans</p>
+                <a href="info-clash-of-clans.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/1.jpg" alt="Продукт 2">
+                <p>Brawl Stars</p>
+                <a href="info-brawl-stars.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/9.jpg" alt="Продукт 3">
+                <p>Clash Royale</p>
+                <a href="info-clash-royale.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/2.png" alt="Продукт 4">
+                <p>Лайки CS2</p>
+                <a href="info-layki-cs2.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/7.png" alt="Продукт 5">
+                <p>Карты Steam</p>
+                <a href="info-steam-cart.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/10.jpg" alt="Продукт 6">
+                <p>Очки Steam</p>
+                <a href="info-ochki-steam.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/11.png" alt="Продукт 7">
+                <p>Пополнение Steam</p>
+                <a href="info-steam.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/12.png" alt="Продукт 8">
+                <p>Spotify Premium</p>
+                <a href="info-spotify-premium.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/3.png" alt="Продукт 9">
+                <p>Discord nitro</p>
+                <a href="info-discord-nitro.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/4.png" alt="Продукт 10">
+                <p>Valorant</p>
+                <a href="info-valorant.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/5.png" alt="Продукт 11">
+                <p>Roblox</p>
+                <a href="info-roblox.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+            <div class="product-card">
+                <img src="img/6.png" alt="Продукт 12">
+                <p>Fortnite</p>
+                <a href="info-fornite.html"><button class="buy-button">Подробнее</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="comments-section">
+           <section class="comments-section">
+      <div class="comments-slider">
+        <div class="comment">
+          <div class="comment-header">
+            <span class="username">Игрок123</span> — 
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="comment-body">
+            Очень крутой сайт! 🔥
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comment-header">
+            <span class="username">TopGamer</span> — 
+            <span class="stars">⭐⭐⭐⭐</span>
+          </div>
+          <div class="comment-body">
+            Нашёл всё, что хотел, спасибо! 👍
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comment-header">
+            <span class="username">Vasya228</span> — 
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="comment-body">
+            Поддержка ответила быстро! 💬
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comment-header">
+            <span class="username">ElitePlayer</span> — 
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="comment-body">
+            Качество аккаунтов на высоте! 🎮
+          </div>
+        </div>
+      </div>
+      <button id="addCommentBtn">Добавить отзыв</button>
+    </section>
+    </section>
+
+        <div id="commentModal" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+        <textarea id="commentInput" placeholder="Введите ваш комментарий..." maxlength="250"></textarea>
+        <br><br>
+        <label for="starInput">Количество звёзд:</label>
+        <select id="starInput">
+          <option value="1">⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="5" selected>⭐⭐⭐⭐⭐</option>
+        </select>
+        <br><br>
+        <button id="submitCommentBtn">Отправить</button>
+      </div>
+
+    <footer>
+              <!-- СЕКЦИЯ СПОНСОРОВ -->
+      <section class="sponsors" style="display: none;">
+        <h3>Наши спонсоры</h3>
+        <div class="sponsor-promo">
+          <div class="promo-item">
+            <p>промо:GS</p>
+            <img src="https://gamer.market/wp-content/uploads/2025/01/sb-logo-1-1024x344.png" alt="Картинка 1">
+          </div>
+          <div class="promo-item">
+            <p>промо:GS</p>
+            <img src="https://gamer.market/wp-content/uploads/2025/02/aim.market-1-1024x204.png" alt="Картинка 2">
+          </div>
+        </div>
+        <br>
+      </section>
+      <div class="container-footer w-container">
+        <div class="w-row">
+          <div class="footer-column w-clearfix w-col w-col-4">
+            <img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/596d33f36607b12cfdaf8ad2_LogoWhite.png" alt="" width="40" class="failory-logo-image">
+            <h3 class="footer-failory-name">Game Shop</h3>
+            <p class="footer-description-failory">Для настоящих геймеров<br></p>
+          </div>
+          <div class="footer-column w-col w-col-8">
+            <div class="w-row">
+              <div class="w-col w-col-8">
+                <div class="w-row">
+                  <div class="w-col w-col-7 w-col-small-6 w-col-tiny-7">
+                    <p class="footer-links">
+                      <a href="dop-blog.html" target="_self"><span class="footer-link">Блог<br></span></a>
+                      <a href="https://t.me/What_sait_bot"><span class="footer-link">По вопросам рекламы<br></span></a>
+                      <a href="dop-instruction.html"><span class="footer-link">Конфиденциальность</span></a><span><br></span>
+                      <a href="dop-instruction.html"><span class="footer-link">Политика<br></span></a>
+                      <a href="dop-vozvrat.html"><span class="footer-link">Политика возврата<br></span></a>
+                    </p>
+                  </div>
+                  <div class="w-col w-col-5 w-col-small-6 w-col-tiny-5">
+                    <p class="footer-links">
+                      <a href="dop-FAQ.html"><span class="footer-link">FAQ<br></span></a>
+                      <a href="https://t.me/What_sait_bot"><span class="footer-link">Поддержка<br></span></a>
+                      <a href="dop-blog.html"><span class="footer-link">Новости<br></span></a>
+                      <a href="#" id="sponsors-btn"><span class="footer-link">Спонсоры</span></a><strong><br></strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="column-center-mobile w-col w-col-4">
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbf0a2f2b67e3b3ba079c_Twitter%20Icon.svg" width="20" alt="Twitter icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbfe70fcf5a0514c5b1da_Instagram%20Icon.svg" width="20" alt="Instagram icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbe42e1e6034fdaba46f6_Facebook%20Icon.svg" width="20" alt="Facebook Icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0002f2b676eb4ba0869_LinkedIn%20Icon.svg" width="20" alt="LinkedIn Icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0112f2b6739c9ba0871_Pinterest%20Icon.svg" width="20" alt="Pinterest Icon"></a>
+                <p class="footer-description">Email: <a href="#"><strong class="link-email-footer">support@game.shop</strong></a><br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+      document.getElementById("sponsors-btn").addEventListener("click", function(event) {
+        event.preventDefault();
+        const sponsorsSection = document.querySelector(".sponsors");
+        if (sponsorsSection.style.display === "none") {
+          sponsorsSection.style.display = "block";
+          this.querySelector('.footer-link').textContent = "Спрятать спонсоров";
+        } else {
+          sponsorsSection.style.display = "none";
+          this.querySelector('.footer-link').textContent = "Спонсоры";
+        }
+      });
+
+      // Скрипт для переключения темы
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+
+      themeToggle.addEventListener('click', () => {
+          if (body.classList.contains('dark-theme')) {
+              body.classList.remove('dark-theme');
+              body.classList.add('light-theme');
+              themeToggle.textContent = '🌙'; // Показать луну
+          } else {
+              body.classList.remove('light-theme');
+              body.classList.add('dark-theme');
+              themeToggle.textContent = '☀️'; // Показать солнце
+          }
+      });
+
+      // Проверяем, нет ли уже сохранённой темы в localStorage (чтобы не обижать пользователя каждый раз тёмным экраном)
+      if (localStorage.getItem('theme') === 'light') {
+          body.classList.remove('dark-theme');
+          body.classList.add('light-theme');
+          themeToggle.textContent = '🌙';
+      }
+
+      themeToggle.addEventListener('click', () => {
+          const theme = body.classList.contains('light-theme') ? 'light' : 'dark';
+          localStorage.setItem('theme', theme);
+      });
+    </script>
+
+    <script src="script-coment.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const currentUser = localStorage.getItem('currentUser');
+        const authLink = document.getElementById('authLink');
+        const accountLink = document.getElementById('accountLink');
+
+        if (currentUser) {
+          authLink.style.display = 'none';
+          accountLink.textContent = currentUser;
+          accountLink.style.display = 'inline';
+        }
+    </script>
+
+</div>
+</body>
+</html>

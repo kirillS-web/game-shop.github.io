@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style-foter.css">
+    <style>
+       .container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #ffffff3d;
+    color: #000000;
+    padding: 20px;
+    position: absolute;
+    left: 200px;
+    top: 70px;
+    transform: translateX(-50%); /* Центрируем кнопку по горизонтали */
+    padding: 15px 30px; /* Добавляем внутренние отступы для кнопки */
+    border: none; /* Убираем границу у кнопки */
+    cursor: pointer; /* Меняем курсор на указатель, когда наводим на кнопку */
+    border-radius: 5px; /* Закругляем углы кнопки */
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color :white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    color : white;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color :white;
+}
+
+.sidebar ul li:hover {
+    background: #000000;
+}
+
+.content {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .section {
+        position: absolute;
+        top : 100px;
+        left: 360px;
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #f9f9f945;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .section h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: #ffffff;
+    }
+
+    .section p {
+        margin: 0;
+        font-size: 1em;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+        .section {
+            padding: 15px;
+        }
+
+        .section h2 {
+            font-size: 1.2em;
+        }
+    }
+input {
+    position: absolute;
+    top : 56px;
+    left: 1620px;
+    background-color: #ff0000;
+    color: white;padding: 10px;
+    font-size: 16px;border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Game Shop</a>
+        </div>
+
+      <!-- Account section -->
+      <nav id="navLinks">
+        <a href="dop-account.html" id="accountLink" style="display: none;">👤 Личный кабинет</a>
+        <a href="dop-auth.html" id="authLink">🔐 Вход / Регистрация</a>
+      </nav>
+    </header>
+    <input id="input" type="button" onclick="history.back();" value="Назад"/>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li onclick="showSection('section1')">Clash of Clans</li>
+                <li onclick="showSection('section2')">Brawl Stars</li>
+                <li onclick="showSection('section3')">Clash Royale</li>
+                <li onclick="showSection('section4')">Steam</li>
+                <li onclick="showSection('section5')">Spotify Premium</li>
+                <li onclick="showSection('section6')">Discord Nitro</li>
+                <li onclick="showSection('section7')">Valorant</li>
+                <li onclick="showSection('section8')">Roblox</li>
+                <li onclick="showSection('section9')">Fortnite</li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div id="section1" class="section">
+                <h2>Награды апрельских клановых игр</h2>
+                <p>В апреле 2025 года участники клановых игр в Clash of Clans могут рассчитывать на разнообразные награды.<br> Важно отметить, что если вы начали выполнение задания в клане, а затем покинули его, вы всё равно получите награды,<br> которые разблокировал ваш первоначальный клан, при условии, что вы завершили хотя бы одно задание. Однако вы не сможете набирать дополнительные очки, если не вернётесь в исходный клан.</p>
+            </div>
+            <div id="section2" class="section" style="display: none;">
+                <h2>Битва за Королевство Катаны</h2>
+                <p>23 апреля 2025 года в Brawl Stars вышло обновление "Битва за Королевство Катаны", представляющее нового бойца Кадзе. Его основная атака "Тихий сюрикен" позволяет метать два ножа подряд, нанося увеличенный урон при ближнем попадании. Суперспособность "Кулак Звезды Бравла" усиливает его боевые возможности. Это обновление также включает новые скины и улучшения баланса.</p>
+            </div>
+            <div id="section3" class="section" style="display: none;">
+                <h2>Апрельские изменения баланса</h2>
+                <p>9 апреля 2025 года в Clash Royale были внесены изменения баланса, затронувшие 11 карт. Например, урон заклинания "Торнадо" был снижен на 50%, а у "Ярости" — на 23%. Эти изменения направлены на улучшение игрового баланса и повышение разнообразия стратегий. </p>
+            </div>
+            <div id="section4" class="section" style="display: none;">
+                <h2>Valve выпустила обновление клиента Steam для ПК и Steam Deck.</h2>
+                <p>Оно содержит исправления ошибок в работе с заметками, скриншотами, синхронизацией через Steam Cloud и интерфейсом. Например, исправлена проблема, из-за которой изменения в заметках могли теряться при работе в офлайн-режиме. Также решена проблема, когда новые скриншоты не сразу отображались в библиотеке и требовался перезапуск клиента — теперь они появляются моментально. </p>
+            </div>
+            <div id="section5" class="section" style="display: none;">
+                <h2>Расширение AI-плейлистов</h2>
+                <p>24 апреля 2025 года Spotify расширил доступ к бета-версии AI-плейлистов для Premium-подписчиков в более чем 40 новых странах, включая регионы Африки, Азии, Европы и Карибского бассейна. Эта функция позволяет пользователям создавать персонализированные плейлисты с помощью искусственного интеллекта.</p>
+            </div>
+            <div id="section6" class="section" style="display: none;">
+                <h2>Весеннее предложение 2025</h2>
+                <p>В марте 2025 года Discord предложил ограниченное по времени весеннее предложение для подписчиков Nitro, действующее до 18 марта. Пользователи могли получить эксклюзивные весенние украшения для аватаров, обновив приложение до последней версии.</p>
+            </div>
+            <div id="section7" class="section" style="display: none;">
+                <h2>Мобильная версия сначала в Китае</h2>
+                <p>21 апреля 2025 года Riot Games объявила, что мобильная версия Valorant сначала будет запущена в Китае. Разработка ведётся студией LightSpeed, известной по мобильным версиям PUBG и Apex Legends. Предварительная регистрация для тестирования уже открыта для китайских игроков.</p>
+            </div>
+            <div id="section8" class="section" style="display: none;">
+                <h2>Запуск региональных цен</h2>
+                <p>21 апреля создатели платформы официально представили систему, которая автоматически оптимизирует ценовую политику под экономическую ситуацию в той или иной стране. Это должно помочь разработчикам ускорить рост на международной арене и сделать внутриигровые покупки более доступными для геймеров из развивающихся стран.</p>
+            </div>
+            <div id="section9" class="section" style="display: none;">
+                <h2>Обновление Ballistic v34.30</h2>
+                <p>22 апреля 2025 года Fortnite выпустил обновление v34.30 для режима Ballistic, в котором были учтены отзывы игроков по картам Hammer Fall и Storm Chaser Cove, а также по оружию и гаджетам. Разработчики продолжают работать над улучшением игрового процесса на основе обратной связи сообщества.</p>
+            </div>
+        </main>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+          
+      <!-- СЕКЦИЯ СПОНСОРОВ -->
+      <section class="sponsors" style="display: none;">
+        <h3>Наши спонсоры</h3>
+        <div class="sponsor-promo">
+          <div class="promo-item">
+            <p>промо:GS</p>
+            <img src="https://gamer.market/wp-content/uploads/2025/01/sb-logo-1-1024x344.png" alt="Картинка 1">
+          </div>
+          <div class="promo-item">
+            <p>промо:GS</p>
+            <img src="https://gamer.market/wp-content/uploads/2025/02/aim.market-1-1024x204.png" alt="Картинка 2">
+          </div>
+        </div>
+        <br>
+      </section>
+      <div class="container-footer w-container">
+        <div class="w-row">
+          <div class="footer-column w-clearfix w-col w-col-4">
+            <img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/596d33f36607b12cfdaf8ad2_LogoWhite.png" alt="" width="40" class="failory-logo-image">
+            <h3 class="footer-failory-name">Game Shop</h3>
+            <p class="footer-description-failory">Для настоящих геймеров<br></p>
+          </div>
+          <div class="footer-column w-col w-col-8">
+            <div class="w-row">
+              <div class="w-col w-col-8">
+                <div class="w-row">
+                  <div class="w-col w-col-7 w-col-small-6 w-col-tiny-7">
+                    <p class="footer-links">
+                      <a href="dop-blog.html" target="_self"><span class="footer-link">Блог<br></span></a>
+                      <a href="https://t.me/What_sait_bot"><span class="footer-link">По вопросам рекламы<br></span></a>
+                      <a href="dop-instruction.html"><span class="footer-link">Конфиденциальность</span></a><span><br></span>
+                      <a href="dop-instruction.html"><span class="footer-link">Политика<br></span></a>
+                      <a href="dop-vozvrat.html"><span class="footer-link">Политика возврата<br></span></a>
+                    </p>
+                  </div>
+                  <div class="w-col w-col-5 w-col-small-6 w-col-tiny-5">
+                    <p class="footer-links">
+                      <a href="dop-FAQ.html"><span class="footer-link">FAQ<br></span></a>
+                      <a href="https://t.me/What_sait_bot"><span class="footer-link">Поддержка<br></span></a>
+                      <a href="dop-blog.html"><span class="footer-link">Новости<br></span></a>
+                      <a href="#" id="sponsors-btn"><span class="footer-link">Спонсоры</span></a><strong><br></strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="column-center-mobile w-col w-col-4">
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbf0a2f2b67e3b3ba079c_Twitter%20Icon.svg" width="20" alt="Twitter icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbfe70fcf5a0514c5b1da_Instagram%20Icon.svg" width="20" alt="Instagram icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbe42e1e6034fdaba46f6_Facebook%20Icon.svg" width="20" alt="Facebook Icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0002f2b676eb4ba0869_LinkedIn%20Icon.svg" width="20" alt="LinkedIn Icon"></a>
+                <a href="dop-erore.html" target="_self" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0112f2b6739c9ba0871_Pinterest%20Icon.svg" width="20" alt="Pinterest Icon"></a>
+                <p class="footer-description">Email: <a href="#"><strong class="link-email-footer">support@game.shop</strong></a><br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+      
+      <script>
+        document.getElementById("sponsors-btn").addEventListener("click", function(event) {
+          event.preventDefault();
+          const sponsorsSection = document.querySelector(".sponsors");
+          if (sponsorsSection.style.display === "none") {
+            sponsorsSection.style.display = "block";
+            this.querySelector('.footer-link').textContent = "Спрятать спонсоров";
+          } else {
+            sponsorsSection.style.display = "none";
+            this.querySelector('.footer-link').textContent = "Спонсоры";
+          }
+        });
+      </script>
+        
+        <script src="script.js"></script>
+        <script>
+            function showSection(sectionId) {
+    // Скрыть все секции
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Показать только нажатую секцию
+    const activeSection = document.getElementById(sectionId);
+    activeSection.style.display = 'block';
+}
+        </script>
+         <script>
+          const currentUser = localStorage.getItem('currentUser');
+          const authLink = document.getElementById('authLink');
+          const accountLink = document.getElementById('accountLink');
+      
+          if (currentUser) {
+            authLink.style.display = 'none';
+            accountLink.textContent = currentUser;
+            accountLink.style.display = 'inline';
+          }
+          
+        </script>
+        </body>
+        </html>
+        

@@ -1,0 +1,303 @@
+        /* Общие стили */
+/* Стили для основного элемента body */
+body {
+    font-family: Arial, sans-serif; /* Устанавливает шрифт для текста на странице */
+    margin: 0; /* Убирает внешние отступы */
+    padding: 0; /* Убирает внутренние отступы */
+    background-color: black; /* Устанавливает черный цвет фона */
+}
+
+/* Стили для класса body, применяются для фона */
+.body {
+    background-image: url('img/fon1.jpg'); /* Устанавливает фоновое изображение */
+    background-repeat: no-repeat; /* Отключает повтор фона */
+    background-attachment: fixed; /* Закрепляет фон, чтобы он не двигался при прокрутке */
+    background-size: cover; /* Фон растягивается, чтобы покрыть весь экран */
+}
+
+/* Стили для шапки (header) страницы */
+header {
+    display: flex; /* Использует флекс-контейнер для размещения элементов */
+    justify-content: space-between; /* Размещает элементы по бокам */
+    align-items: center; /* Центрирует элементы по вертикали */
+    padding: 10px 20px; /* Добавляет отступы внутри шапки */
+    background-color: rgb(0, 0, 0); /* Устанавливает фоновый цвет шапки */
+    color: white; /* Устанавливает белый цвет текста */
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Не такое высокое значение, как в «фиксированном» варианте, но всё же выше обычного контента */
+}
+
+/* Стили для ссылки внутри логотипа в header */
+header .logo a {
+    text-decoration: none; /* Убирает подчеркивание текста */
+    color: white; /* Устанавливает белый цвет текста */
+    font-size: 24px; /* Устанавливает размер шрифта */
+    font-weight: bold; /* Делает текст жирным */
+}
+
+/* Стили для ссылок в блоках аккаунта и корзины */
+header .account a, header .cart a {
+    text-decoration: none; /* Убирает подчеркивание текста */
+    color: white; /* Устанавливает белый цвет текста */
+    font-size: 16px; /* Устанавливает размер шрифта */
+    margin-left: 20px; /* Добавляет отступ слева */
+}
+
+.header-img {
+    display: flex;
+     justify-content: center;
+      align-items: center
+}
+
+/* Стили для раздела продуктов */
+.products {
+    text-align: center; /* Выравнивает текст по центру */
+    margin-top: 50px; /* Добавляет отступ сверху */
+}
+
+/* Стили для заголовка списка продуктов */
+.products h2 {
+    font-size: 28px; /* Устанавливает размер шрифта */
+    margin-bottom: 20px; /* Добавляет отступ снизу */
+    color: white; /* Устанавливает белый цвет текста */
+}
+
+/* Стили для сетки продуктов */
+.product-list {
+    display: grid; /* Использует сетку для размещения элементов */
+    grid-template-columns: repeat(3, 1fr); /* Создает 3 колонки равной ширины */
+    gap: 20px; /* Добавляет отступы между элементами */
+    padding: 0 20px; /* Добавляет горизонтальные отступы */
+}
+
+/* Стили для карточки продукта */
+.product-card {
+    background-color: #222; /* Устанавливает темный фон */
+    padding: 20px; /* Добавляет отступы внутри карточки */
+    border-radius: 15px; /* Закругляет углы */
+    text-align: center; /* Центрирует текст */
+}
+
+/* Стили для изображений в карточках продуктов */
+.product-card img {
+    border-radius: 15px; /* Закругляет углы изображений */
+    width: 100%; /* Устанавливает ширину изображения в 100% от родительского элемента */
+    height: auto; /* Поддерживает пропорции изображения */
+}
+
+/* Стили для текста в карточке продукта */
+.product-card p {
+    margin: 10px 0; /* Добавляет отступы сверху и снизу */
+    font-size: 16px; /* Устанавливает размер шрифта */
+    color: white; /* Устанавливает белый цвет текста */
+}
+
+/* Стили для кнопки "Купить" */
+.buy-button {
+    padding: 10px 20px; /* Добавляет отступы внутри кнопки */
+    border: none; /* Убирает рамку */
+    background-color: #892be25b; /* Устанавливает фоновый цвет */
+    color: white; /* Устанавливает белый цвет текста */
+    border-radius: 15px; /* Закругляет углы кнопки */
+    cursor: pointer; /* Устанавливает курсор в виде руки при наведении */
+}
+
+/* Стили для ссылки внутри кнопки */
+.buy-button a {
+  text-decoration: none; /* Убирает подчеркивание текста */
+  color: #fff; /* Устанавливает белый цвет текста */
+  border-color:  #8a2be2;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #8a2be2 inset, 0 0 0 0  #8a2be2;
+  transition: all 150ms ease-in-out;
+}
+
+/* Эффект при наведении на кнопку */
+.buy-button:hover {
+    box-shadow: 0 0 10px 0  #8a2be2 inset, 0 0 10px 4px  #8a2be2;
+}
+
+/* Стили для дополнительной кнопки */
+.buttonnad {
+    padding: 10px 20px; /* Добавляет отступы внутри кнопки */
+    border: none; /* Убирает рамку */
+    background-color: black; /* Устанавливает черный фон */
+    color: white; /* Устанавливает белый цвет текста */
+    border-radius: 15px; /* Закругляет углы кнопки */
+    cursor: pointer; /* Устанавливает курсор в виде руки при наведении */
+}
+
+/* Стили для футера */
+footer {
+    text-align: center; /* Выравнивает текст по центру */
+    padding: 20px; /* Добавляет отступы */
+    background-color: black; /* Устанавливает черный фон */
+    color: white; /* Устанавливает белый цвет текста */
+}
+
+/* Стили для элементов списка */
+li {
+    color: black; /* Устанавливает черный цвет текста */
+}
+
+/* Эффект при наведении на элементы списка */
+li:hover {
+    background: grey; /* Изменяет фон при наведении */
+}
+
+/* Стили для адаптивного дизайна для экранов шириной до 768px */
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column; /* Размещает элементы по вертикали */
+        align-items: center; /* Центрирует элементы */
+    }
+}
+
+/* Стили для блока с спонсорами */
+.sponsors {
+    text-align: center; /* Выравнивает текст по центру */
+    margin-top: 50px; /* Добавляет отступ сверху */
+}
+
+/* Стили для заголовка спонсоров */
+.sponsors h3 {
+    color: #8a2be2; /* Устанавливает цвет текста */
+    font-size: 28px; /* Устанавливает размер шрифта */
+}
+
+/* Стили для блока с промо-элементами */
+.sponsor-promo {
+    display: flex; /* Использует флекс-контейнер для размещения элементов */
+    justify-content: center; /* Центрирует элементы */
+    gap: 30px; /* Добавляет промежутки между элементами */
+}
+
+/* Стили для текста в каждом промо-элементе */
+.promo-item p {
+    font-size: 18px; /* Устанавливает размер шрифта */
+    color: #8a2be2; /* Устанавливает цвет текста */
+}
+
+/* Стили для изображений в промо-элементах */
+.promo-item img {
+    width: 100px; /* Устанавливает ширину изображения */
+    height: auto; /* Поддерживает пропорции изображения */
+    border-radius: 10px; /* Закругляет углы изображения */
+}
+
+/* Анимация для появления элемента */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%); /* Начальное положение: сдвинуто вправо */
+    }
+    to {
+        transform: translateX(0); /* Конечное положение: на месте */
+    }
+}
+
+  
+  #navLinks a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  }
+  
+  #navLinks a:hover {
+    background-color: #f39c12;
+    color: #1f1f2e;
+    transform: scale(1.05);
+  }
+  
+  .comment-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .comment-body {
+    font-size: 20px;
+  }
+  .comments-section {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  
+  .comments-slider {
+    display: flex;
+    transition: transform 1s ease; /* Плавный сдвиг */
+  }
+  
+  .comment {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  /* Анимация появления */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  #addCommentBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f04e30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  .modal-content {
+    background-color: #333;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+    text-align: center;
+  }
+  
+  .closeBtn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  #commentInput {
+    width: 90%;
+    height: 100px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+  }  
